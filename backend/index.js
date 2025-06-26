@@ -11,19 +11,43 @@ dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
+
+// Dynamic CORS origin function to allow main and preview Vercel URLs
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (
+      !origin ||
+      origin === 'https://ajtrix.vercel.app' ||
+      origin.endsWith('.vercel.app')
+    ) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+
 const io = new Server(server, {
   cors: {
-    origin: process.env.CLIENT_ORIGIN || '*',
-    methods: ['GET', 'POST']
+    origin: (origin, callback) => {
+      if (
+        !origin ||
+        origin === 'https://ajtrix.vercel.app' ||
+        origin.endsWith('.vercel.app')
+      ) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    methods: ['GET', 'POST'],
+    credentials: true,
   }
 });
 
-app.use(cors({
-  origin: [
-    'https://ajtrix.vercel.app'],
-    credentials: true,
-  
-}));
 app.use(express.json());
 
 const PORT = process.env.PORT || 4000;
