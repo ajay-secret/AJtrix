@@ -19,7 +19,7 @@ const io = new Server(server, {
 });
 
 app.use(cors({
-  origin: ['https://ajtrix.vercel.app/'
+  origin: ['https://ajtrix.vercel.app/']
 }));
 app.use(express.json());
 
