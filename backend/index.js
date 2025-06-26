@@ -18,7 +18,9 @@ const io = new Server(server, {
   }
 });
 
-app.use(cors());
+app.use(cors({
+  origin: ['https://ajtrix.vercel.app/'
+}));
 app.use(express.json());
 
 const PORT = process.env.PORT || 4000;
