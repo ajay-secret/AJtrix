@@ -1,0 +1,26 @@
+{
+  "333": {
+    "phone": "333",
+    "username": "ddd",
+    "password": "ddd",
+    "contacts": [
+      "9941064000"
+    ],
+    "profilePic": ""
+  },
+  "9999999999": {
+    "phone": "9999999999",
+    "username": "admin",
+    "password": "admin123",
+    "isAdmin": true,
+    "contacts": []
+  },
+  "9941064000": {
+    "phone": "9941064000",
+    "username": "Ajay Karthick",
+    "password": "ajay1207",
+    "contacts": [
+      "333"
+    ]
+  }
+}
