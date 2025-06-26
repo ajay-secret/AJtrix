@@ -4,7 +4,7 @@ import ChatHeader from './components/ChatHeader';
 import ChatBubble from './components/ChatBubble';
 import ChatInput from './components/ChatInput';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://192.168.0.105:4000';
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'https://ajtrix.onrender.com';
 
 function App() {
   const [user, setUser] = useState(null); // { phone, username }
