@@ -21,7 +21,7 @@ const io = new Server(server, {
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'https://ajtrix.vercel.app/
+    'https://ajtrix.vercel.app/'
   ]
 }));
 app.use(express.json());
